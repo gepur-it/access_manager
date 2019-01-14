@@ -1,0 +1,43 @@
+{
+    "name": "gepur-it/access_manager",
+    "description": "Gepur role based access manager",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Andrii Yakovlev",
+            "email": "yawa20@gmail.com"
+        },
+        {
+            "name": "Marina Mileva",
+            "email": "m934222258@gmail.com"
+        },
+        {
+            "name": "Victor Pavlov",
+            "email": "zogxray@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "GepurIt\\AccessManagerBundle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GepurIt\\Tests\\AccessManagerBundle\\": "Tests"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2",
+        "symfony/http-kernel": "^4.2",
+        "doctrine/mongodb-odm-bundle": "^3.5",
+        "symfony/security": "^4.2",
+        "symfony/yaml": "^4.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    }
+}

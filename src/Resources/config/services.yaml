@@ -1,0 +1,13 @@
+services:
+    GepurIt\AccessManagerBundle\AccessDecisionManager:
+        aurowire: true
+        arguments:
+            $providerKey: 'main'
+
+    GepurIt\AccessManagerBundle\AccessChecker:
+        autowire: true
+
+    GepurIt\AccessManagerBundle\EventListener\AccessListener:
+        autowire: true
+        tags:
+            - { name: "kernel.event_listener", event: "kernel.controller", method: "onKernelController" }
