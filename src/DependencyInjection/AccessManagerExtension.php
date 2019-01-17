@@ -4,7 +4,7 @@
  * @since : 14.01.19
  */
 
-namespace DependencyInjection;
+namespace GepurIt\AccessManagerBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
