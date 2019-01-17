@@ -1,6 +1,6 @@
 services:
     GepurIt\AccessManagerBundle\AccessDecisionManager:
-        aurowire: true
+        autowire: true
         arguments:
             $providerKey: 'main'
 
