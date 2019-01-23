@@ -6,7 +6,7 @@
 
 namespace GepurIt\AccessManagerBundle;
 
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -16,7 +16,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class AccessChecker
 {
     /**
-     * @var TokenStorage
+     * @var TokenStorageInterface
      */
     private $token;
 
@@ -27,10 +27,10 @@ class AccessChecker
 
     /**
      * ReportTypeGuard constructor.
-     * @param TokenStorage $token
+     * @param TokenStorageInterface $token
      * @param AccessDecisionManager $manager
      */
-    public function __construct(TokenStorage $token, AccessDecisionManager $manager)
+    public function __construct(TokenStorageInterface $token, AccessDecisionManager $manager)
     {
         $this->token = $token;
         $this->manager = $manager;
