@@ -5,7 +5,6 @@ namespace GepurIt\AccessManagerBundle\EventListener;
 use GepurIt\AccessManagerBundle\Annotations\Access;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\Reader;
-use Doctrine\Common\Util\ClassUtils;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
@@ -58,7 +57,7 @@ class AccessListener
 
         /** @var Access $classAnnotation */
         $classAnnotation = $this->reader->getClassAnnotation(
-            new \ReflectionClass(ClassUtils::getClass($controllerObject)),
+            new \ReflectionClass(get_class($controllerObject)),
             Access::class
         );
         if (null !== $classAnnotation) {
