@@ -2,11 +2,11 @@
 
 namespace GepurIt\AccessManagerBundle\EventListener;
 
-use GepurIt\AccessManagerBundle\Annotations\Access;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\Reader;
+use GepurIt\AccessManagerBundle\Annotations\Access;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
+use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
@@ -24,7 +24,7 @@ class AccessListener
 
     /**
      * AccessListener constructor.
-     * @param Reader $reader
+     * @param Reader                        $reader
      * @param AuthorizationCheckerInterface $auth
      */
     public function __construct(Reader $reader, AuthorizationCheckerInterface $auth)
@@ -34,10 +34,10 @@ class AccessListener
     }
 
     /**
-     * @param FilterControllerEvent $event
+     * @param ControllerEvent $event
      * @throws \ReflectionException
      */
-    public function onKernelController(FilterControllerEvent $event)
+    public function onKernelController(ControllerEvent $event)
     {
         $controller = $event->getController();
 

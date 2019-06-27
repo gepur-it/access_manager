@@ -40,7 +40,7 @@ class AccessChecker
      * @param string $resource
      * @return bool
      */
-    public function accepted(string $resource) :bool
+    public function accepted(string $resource): bool
     {
         /** @var UserInterface $user */
         $user = $this->token->getToken()->getUser();

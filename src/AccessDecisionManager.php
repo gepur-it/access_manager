@@ -33,7 +33,7 @@ class AccessDecisionManager implements AccessDecisionManagerInterface
     /**
      * AccessDecisionManager constructor.
      * @param AccessDecisionManagerInterface $decisionManager
-     * @param string $providerKey
+     * @param string                         $providerKey
      */
     public function __construct(AccessDecisionManagerInterface $decisionManager, string $providerKey)
     {
@@ -43,20 +43,21 @@ class AccessDecisionManager implements AccessDecisionManagerInterface
 
     /**
      * @param UserInterface $user
-     * @param string $access
-     * @param string $source
+     * @param string        $access
+     * @param string        $source
      * @return bool
      */
-    public function isGranted(UserInterface $user, string $access, string $source)
+    public function isGranted(UserInterface $user, string $access, string $source): bool
     {
         $token = new UsernamePasswordToken($user, '', $this->providerKey, $user->getRoles());
+
         return $this->decide($token, [$access], $source);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function decide(TokenInterface $token, array $attributes, $object = null)
+    public function decide(TokenInterface $token, array $attributes, $object = null): bool
     {
         return $this->decisionManager->decide($token, $attributes, $object);
     }
