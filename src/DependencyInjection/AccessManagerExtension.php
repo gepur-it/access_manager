@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * @author: Andrii yakovlev <yawa20@gmail.com>
  * @since : 14.01.19
@@ -20,14 +21,14 @@ class AccessManagerExtension extends Extension
     /**
      * Loads a specific configuration.
      *
-     * @param array            $configs
+     * @param array $configs
      * @param ContainerBuilder $container
      *
      * @throws \Exception
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yaml');
     }
 }

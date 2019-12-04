@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * @author: Andrii yakovlev <yawa20@gmail.com>
  * @since: 26.09.17
@@ -33,7 +34,7 @@ class AccessDecisionManager implements AccessDecisionManagerInterface
     /**
      * AccessDecisionManager constructor.
      * @param AccessDecisionManagerInterface $decisionManager
-     * @param string                         $providerKey
+     * @param string $providerKey
      */
     public function __construct(AccessDecisionManagerInterface $decisionManager, string $providerKey)
     {
@@ -43,8 +44,8 @@ class AccessDecisionManager implements AccessDecisionManagerInterface
 
     /**
      * @param UserInterface $user
-     * @param string        $access
-     * @param string        $source
+     * @param string $access
+     * @param string $source
      * @return bool
      */
     public function isGranted(UserInterface $user, string $access, string $source): bool

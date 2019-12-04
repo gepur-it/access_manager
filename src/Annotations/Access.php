@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * @author: Andrii yakovlev <yawa20@gmail.com>
  * @since : 14.01.19
@@ -24,6 +25,6 @@ class Access
     /** @var string $resource */
     public $resource;
 
-    /** @var string  */
+    /** @var string */
     public $message = 'Access Denied.';
 }

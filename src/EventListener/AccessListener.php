@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace GepurIt\AccessManagerBundle\EventListener;
 
@@ -24,7 +25,7 @@ class AccessListener
 
     /**
      * AccessListener constructor.
-     * @param Reader                        $reader
+     * @param Reader $reader
      * @param AuthorizationCheckerInterface $auth
      */
     public function __construct(Reader $reader, AuthorizationCheckerInterface $auth)

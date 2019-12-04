@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * @author: Andrii yakovlev <yawa20@gmail.com>
  * @since : 14.01.19
